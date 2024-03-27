@@ -21,8 +21,8 @@ class ArtistFactory extends Factory
     {
         return [
             'siret'=> fake()->randomNumber(1,14),
-            'history'=>fake()->text(300),
-            'craftingDescription'=>fake()->text(300),
+            'history'=>fake()->text(255),
+            'craftingDescription'=>fake()->text(255),
         ];
     }
 }

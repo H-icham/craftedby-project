@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('artists', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('history');
-            $table->string('craftingsDescription');
+            $table->string('craftingDescription');
             $table->integer('siret');
+            $table->timestamps();
             $table->foreignUuid('specialities_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignUuid('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignUuid('theme_id')->nullable()->constrained()->cascadeOnDelete();

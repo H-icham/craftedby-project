@@ -17,8 +17,8 @@ class RoleFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=>fake()->word(),
-            'enum'=> fake()->randomNumber(5),
+            'type'=>fake()->word(),
+            'enum'=> fake()->numberBetween(1,3),
         ];
     }
 }

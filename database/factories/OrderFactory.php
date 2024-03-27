@@ -18,9 +18,9 @@ class OrderFactory extends Factory
     {
         return [
             'date' => fake()->dateTime(),
-            'deliveryStatus' =>fake()->text(50),
+            'deliveryStatus' =>fake()->boolean(),
             'totalPrice'=> fake()->randomFloat(2,0,1000),
-            'cartStatus'=> fake()->text(50),
+            'cartStatus'=> fake()->boolean(),
 
         ];
     }

@@ -20,7 +20,7 @@ class ReviewFactory extends Factory
     {
         return [
             'rating' => fake()->numberBetween(0,5),
-            'comment'=> fake()->text(300),
+            'comment'=> fake()->text(255),
         ];
     }
 }

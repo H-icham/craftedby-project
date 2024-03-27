@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Theme;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,8 @@ class ThemeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Theme::factory()
+            ->count(20)
+            ->create();
     }
 }

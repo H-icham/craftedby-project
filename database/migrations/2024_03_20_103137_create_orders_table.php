@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean('deliveryStatus');
             $table->integer('totalPrice');
             $table->boolean('cartStatus');
+            $table->date('date');
         });
     }
 

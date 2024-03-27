@@ -10,10 +10,6 @@ class Theme extends Model
 {
     use HasFactory, HasUuids;
 
-
-
-
-
     public function artist(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Artist::class);

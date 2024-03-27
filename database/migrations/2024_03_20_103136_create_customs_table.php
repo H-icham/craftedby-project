@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('nameColor');
             $table->string('nameSize');
+            $table->timestamps();
         });
     }
 

@@ -11,9 +11,6 @@ class Material extends Model
     use HasFactory, HasUuids;
 
 
-
-
-
     public function product(): HasMany
     {
         return $this->hasMany(Product::class);

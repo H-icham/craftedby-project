@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Specialitie extends Model
 {
     use HasFactory, HasUuids;
-
+    protected $fillable= [
+        'name',
+    ];
 
 
 
