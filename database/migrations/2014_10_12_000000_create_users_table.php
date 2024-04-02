@@ -24,7 +24,6 @@ return new class extends Migration
             $table->bigInteger('postalcode');
             $table->string('city');
             $table->bigInteger('countrycode');
-
         });
     }
 

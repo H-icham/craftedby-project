@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('totalPrice');
             $table->boolean('cartStatus');
             $table->date('date');
+            $table->foreignUuid('user_id')->nullable()->constrained()->cascadeOnDelete();
         });
     }
 

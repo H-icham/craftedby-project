@@ -2,18 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Routing\Route;
-use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function show(string $id): View
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return view('user.profile', [
-            'user' => User::findOrFail($id)
-        ]);
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(User $user)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, User $user)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(User $user)
+    {
+        //
     }
 }
-Route::get('/user/{id}', [UserController::class, 'show']);
