@@ -20,7 +20,7 @@ class ArtistFactory extends Factory
     public function definition(): array
     {
         return [
-            'siret'=> fake()->randomNumber(1,14),
+            'siret'=> fake()->numberBetween(13, 20),
             'history'=>fake()->text(255),
             'craftingDescription'=>fake()->text(255),
         ];

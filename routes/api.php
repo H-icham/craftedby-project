@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('artists', [ArtistController::class, 'index']);
 Route::get('/artists/{id}',[ArtistController::class, 'show']);
-Route::post('/artists/post', [ArtistController::class, 'store']);
-Route::put('/artists/update/{id}',[ArtistController::class, 'update']);
-Route::delete('/artists/delete/{id}', [ArtistController::class, 'destroy']);
+Route::post('/artists', [ArtistController::class, 'store']);
+Route::put('/artists/{id}',[ArtistController::class, 'update']);
+Route::delete('/artists/{id}', [ArtistController::class, 'destroy']);
+
+Route::get('users', [UserController::class, 'index']);
+Route::get('/users/{id}',[UserController::class, 'show']);
+Route::post('/users', [UserController::class, 'store']);
+Route::put('/users/{id}',[UserController::class, 'update']);
+Route::delete('/users/{id}', [UserController::class, 'destroy']);
 

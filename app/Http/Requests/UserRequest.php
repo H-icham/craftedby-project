@@ -11,7 +11,7 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,14 +22,14 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'lastname' =>['required', 'string'],
-            'firstname' => ['required', 'string'],
-            'email' =>['required|string|email:rfc,dns|max:250|unique:users,email'],
-            'password' =>['required|string|min:8|confirmed'],
-            'street' => ['required', 'string'],
-            'postalcode' =>['required', 'biginteger'],
-            'city' =>['required', 'string'],
-            'countrycode' => ['required', 'biginteger'],
+            'lastname' =>['required'],
+            'firstname' => ['required'],
+            'email' =>['required'],
+            'password' =>['required'],
+            'street' => ['required'],
+            'postalcode' =>['required'],
+            'city' =>['required'],
+            'countrycode' => ['required'],
         ];
     }
 }

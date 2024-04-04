@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArtistRequest;
 use App\Http\Resources\ArtistResource;
 use App\Models\Artist;
 use Illuminate\Http\Request;
@@ -20,9 +21,22 @@ class ArtistController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ArtistRequest $request)
     {
-//
+        $artist = new Artist;
+        $artist->siret = $request->input('siret');
+        $artist->history = $request->input('history');
+        $artist->craftingDescription = $request->input('craftingDescription');
+        //$artist->user()->associate($user);
+        $artist->save();
+
+//        $artist = Artist::create($request->all());
+//        $artist = ArtistResource::make($artist);
+
+
+        return response()->json(
+            $artist
+        );
     }
 
     /**
