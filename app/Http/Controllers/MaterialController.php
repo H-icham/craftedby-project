@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MaterialRequest;
+use App\Http\Resources\MaterialResource;
 use App\Models\Material;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,7 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        //
+        return Material::all();
     }
 
     /**
@@ -20,30 +22,50 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $materials = new Material;
+        $materials->name = $request->input('name');
+
+        $materials->save();
+
+        return response()->json([
+            'materials'=>$materials
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Material $material)
+    public function show($id)
     {
-        //
+        $materials= new MaterialResource(Material::find($id));
+        return response()->json([
+            'materials'=>$materials
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Material $material)
+    public function update($id, MaterialRequest $request)
     {
-        //
+        $materials=Material::find($id);
+        $materials->update($request->safe());
+        $materials->save();
+        return response()->json([
+            'materials'=>$materials
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Material $material)
+    public function destroy($id)
     {
-        //
+        $materials = Material::find($id);
+        $materials->delete();
+
+        return response()->json([
+            'materials'=>$this->index()
+        ]);
     }
 }

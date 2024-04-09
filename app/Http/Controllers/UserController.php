@@ -46,9 +46,6 @@ class UserController extends Controller
 
         $users->save();
 
-//        $artist = Artist::create($request->all());
-//        $artist = ArtistResource::make($artist);
-
         return response()->json([
             'users'=>$users
         ]);
