@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('street');
-            $table->bigInteger('postalcode');
-            $table->string('city');
-            $table->bigInteger('countrycode');
+            $table->string('street')->nullable();
+            $table->bigInteger('postalcode')->nullable();
+            $table->string('city')->nullable();
+            $table->bigInteger('countrycode')->nullable();
         });
     }
 
